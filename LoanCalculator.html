@@ -1,0 +1,122 @@
+
+
+<html> 
+<head>
+
+
+	<script type="text/javascript">
+
+
+		function doPayment() {
+
+
+
+			var t= document.getElementById("a").value;
+
+			var y= document.getElementById("b").value;
+
+			var l= document.getElementById("c").value;
+
+			var r= document.getElementById("d").value;
+
+			var w= computePayment(t, y, l, r)
+			
+			document.getElementById("output1").innerHTML= "$" + w;
+
+		}
+
+		
+
+		function computePayment(principal, annualRate, years, periodsPerYear) {
+
+
+			var z= annualRate / periodsPerYear;
+
+			var q= (periodsPerYear * years) * -1;
+
+			var k= ( 1 + z);
+
+			var x= Math.pow(k, q);
+
+			var w= ((principal * z)/ 1) - x;
+
+			return w; 
+
+		}
+
+		function doBalance() {
+
+			var t= document.getElementById("a").value;
+
+			var y= document.getElementById("b").value;
+
+			var l= document.getElementById("c").value;
+
+			var r= document.getElementById("d").value;
+
+			var o= document.getElementById("o").value;
+
+			var w= computePayment(t, y, l, r)
+
+			var john= computeBalance(t, y, l, r, o)
+
+			document.getElementById("output").innerHTML = "$" + john;
+
+		}
+
+		function computeBalance(principal, annualRate, years, periodsPerYear, numberOfPaymentsPaidToDate) {
+
+
+			var t= document.getElementById("a").value;
+
+			var y= document.getElementById("b").value;
+
+			var l= document.getElementById("c").value;
+
+			var r= document.getElementById("d").value;
+			
+			var w= computePayment(t, y, l, r)
+
+			var garret= annualRate / years;
+
+			var tony= 1 + garret;
+
+			var robert= Math.pow(tony, numberOfPaymentsPaidToDate);
+
+			var javier= w * (robert -1);
+
+			var eli= javier / 2;
+
+			var john= (principal * robert) - eli;
+
+			return john; 	
+
+		}
+
+	</script>
+</head>
+<body>
+
+<h1>Loan Calculator</h1>
+
+
+Amount Borrowed (principal) <input type="text" id="a"><br>
+
+Annual interest rate (example .065) <input text id="b"><br>
+
+Number of years <input type="text" id="c"><br>
+
+Payments per year <input tpye="text" id="d"><br>
+
+<button type="button" onclick="doPayment()">Compute payment</button> <div id="output1"></div><br>
+
+Number of payments paid to date <input type="text" id="o"><br>
+
+<button type="button" onclick="doBalance()">Compute payoff amount</button><br>
+
+<div id="output"></div>
+
+
+</body>
+
+</html> 
