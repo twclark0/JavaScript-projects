@@ -3,29 +3,22 @@
 
 
 <script type="text/javascript">
-
-
-
 function hasClass(ele, cls) {
     return !!ele.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
 }
-
 function addClass(ele, cls) {
     if (!hasClass(ele, cls)) ele.className += " " + cls;
 }
-
 function removeClass(ele, cls) {
     if (hasClass(ele, cls)) {
         var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
         ele.className = ele.className.replace(reg, ' ');
     }
 }
-
 //Add event from js the keep the marup clean
 function init() {
     document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
 }
-
 //The actual fuction
 function toggleMenu() {
     var ele = document.getElementsByTagName('body')[0];
@@ -35,15 +28,12 @@ function toggleMenu() {
         removeClass(ele, "open");
     }
 }
-
 //Prevent the function to run before the document is loaded
 document.addEventListener('readystatechange', function() {
     if (document.readyState === "complete") {
         init();
     }
 });
-
-
 </script>
 
 
@@ -53,22 +43,17 @@ body {
     width: 100%;
     height: 100%;
     margin: 0;
-
     font-family: "Roboto", sans-serif;
-
     color: #fff;
     background-color: #232629;
 }
-
 p {
     line-height: 1.7;
 }
 h2 {
     margin-top: 30px;
-
     font-size: 1.7em;
     line-height: 1;
-
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -77,49 +62,40 @@ h2 {
     position: fixed;
     top: 0;
     left: -300px;
-
     width: 300px;
     height: 100%;
     padding: 50px 30px;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-
     -webkit-transition: all .3s ease-in;
        -moz-transition: all .3s ease-in;
          -o-transition: all .3s ease-in;
             transition: all .3s ease-in;
     text-align: center;
-
     background-color: #fff;
 }
 #menu .brand {
     height: 51px;
-
     font-size: 70px;
     font-weight: 900;
     line-height: .6;
-
     color: #ddd;
 }
 #menu ul {
     padding: 0;
     margin-top: 30px;
 }
-
 #menu ul li a {
     display: block;
-
     font-weight: 900;
     line-height: 50px;
-
     -webkit-transition: all .3s ease;
        -moz-transition: all .3s ease;
          -o-transition: all .3s ease;
             transition: all .3s ease;
     text-decoration: none;
     text-transform: uppercase;
-
     color: #232629;
     border-top: 1px solid #eee;
 }
@@ -139,7 +115,6 @@ body.open #menu {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-
     -webkit-transition: all .3s ease-in;
        -moz-transition: all .3s ease-in;
          -o-transition: all .3s ease-in;
@@ -148,20 +123,15 @@ body.open #menu {
 body.open .page-wrap {
     margin-left: 300px;
 }
-
 /* MENU TOGGLE ICON */
-
 button:focus {
     outline: none;
 }
 #menu-toggle {
     position: relative;
-
     width: 51px;
     height: 51px;
-
     cursor: pointer;
-
     border: none;
     -webkit-border-radius: 50px;
        -moz-border-radius: 50px;
@@ -171,32 +141,26 @@ button:focus {
 #menu-toggle:before,
 #menu-toggle:after {
     position: absolute;
-
     content: "";
     content: "";
     -webkit-transition: all .5s ease;
        -moz-transition: all .5s ease;
          -o-transition: all .5s ease;
             transition: all .5s ease;
-
     background-color: #232629;
 }
-
 #menu-toggle:before {
     top: 12px;
     left: 25px;
-
     width: 1px;
     height: 27px;
 }
 #menu-toggle:after {
     top: 25px;
     left: 12px;
-
     width: 27px;
     height: 1px;
 }
-
 body.open button#menu-toggle:before,
 body.open button#menu-toggle:after {
     -webkit-transform: rotate(45deg);
@@ -209,9 +173,6 @@ body.open button#menu-toggle:after {
     min-width: 200px;
     margin: 0 auto;
 }
-
-
-
 </style>
 </head>
 <body>
@@ -229,10 +190,7 @@ body.open button#menu-toggle:after {
         <button id="menu-toggle"></button>
         <div class="container" role="main">
             <article>
-                <h2>Vanilla Javascript push menu</h2>
-                    <p>Sometimes you just need a really simple push menu, without any Javascript Libraries. I made this in a rush for a client with the instructions to not use any jQuery.</p>
-                    <p>I like the thought of adding a class to the body and climb the DOM instead of adding classes to the affected elements.</p>
-                    <p>Less is more.</p>
+                <h2>Opening Toggle Menu</h2>
             </article>
       </div>
    </div>
